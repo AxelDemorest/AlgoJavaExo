@@ -77,6 +77,51 @@ public class Main {
         return index;
     }
 
+    /**
+     *
+     * @param array - Tableau crée
+     * @param result - Nombre du tableau que nous souhaitons chercher
+     * @param min - Index le plus petit du tableau
+     * @param max - Index le plus grand du tableau
+     * @return l'index du résultat souhaité
+     */
+    public static int searchBinaryRecursive(int[] array, int result, int min, int max) {
+
+        int middle;
+
+        middle = (min + max)/2;
+
+        if(max <  min) {
+            return -1;
+        }
+
+        if(array[middle] == result) {
+            return middle;
+        }
+
+        if(array[middle] > result) {
+            return searchBinaryRecursive(array, result, min, middle - 1);
+        } else {
+            return searchBinaryRecursive(array, result, middle + 1, max);
+        }
+    }
+
+    static void countDownLoop(int start) {
+        for (int i = start; i > 0; i--) {
+            System.out.println(i + "...");
+        }
+        System.out.println("FINISHED");
+    }
+
+    static void countDownRecursive(int start) {
+        if (start > 0) {
+            System.out.println(start + "...");
+            countDownRecursive(start - 1);
+        } else {
+            System.out.println("FINISHED");
+        }
+    }
+
     public static void main(String[] args) {
 	// write your code here
 
@@ -87,8 +132,8 @@ public class Main {
         scores[2] = 3;
         scores[3] = 4;
         scores[4] = 5;
-        scores[5] = 6;
-        scores[6] = 7;
+        scores[5] = 7;
+        scores[6] = 10;
 
         displayArray(scores);
 
@@ -104,8 +149,12 @@ public class Main {
 
         System.out.println("moyenne = " + total / scores.length);
 
-        int search = searchBinary(scores, 87);
+        int search = searchBinary(scores, 10);
 
         System.out.println("recherche binaire = " +  search);
+
+        int searchRecursive = searchBinaryRecursive(scores, 10, 0, 6);
+
+        System.out.println("recherche binaire récursive = " +  searchRecursive);
     }
 }
