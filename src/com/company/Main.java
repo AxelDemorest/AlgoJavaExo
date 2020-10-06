@@ -49,18 +49,46 @@ public class Main {
         return false;
     }
 
+    /**
+     * Recherche binaire de l'index du résultat voulu dans le tableau
+     * @param array - le tableau
+     * @param result - Nombre du tableau que nous souhaitons chercher
+     * @return l'index du résultat souhaité
+     */
+    public static int searchBinary(int[] array, int result) {
+
+        int min = 0;
+        int max = array.length - 1;
+        int index = -1;
+        int middle;
+
+        while(min <= max) {
+            middle = (min + max)/2;
+            if(array[middle] < result) {
+                min = middle + 1;
+            } else if(array[middle] > result) {
+                max = middle - 1;
+            } else if(array[middle] == result) {
+                index = middle;
+                break;
+            }
+        }
+
+        return index;
+    }
+
     public static void main(String[] args) {
 	// write your code here
 
         int[] scores = new int[7];
 
-        scores[0] = 83;
-        scores[1] = 383;
-        scores[2] = 2;
-        scores[3] = 304;
-        scores[4] = 63;
-        scores[5] = 86;
-        scores[6] = 38;
+        scores[0] = 1;
+        scores[1] = 2;
+        scores[2] = 3;
+        scores[3] = 4;
+        scores[4] = 5;
+        scores[5] = 6;
+        scores[6] = 7;
 
         displayArray(scores);
 
@@ -75,5 +103,9 @@ public class Main {
         }
 
         System.out.println("moyenne = " + total / scores.length);
+
+        int search = searchBinary(scores, 87);
+
+        System.out.println("recherche binaire = " +  search);
     }
 }
