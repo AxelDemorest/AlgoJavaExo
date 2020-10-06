@@ -2,6 +2,39 @@ package com.company;
 
 public class Main {
 
+    static void displayArray(int[] array) {
+
+        for(int i = 0; i < array.length; i++) {
+            System.out.println("score = " + array[i]);
+        }
+    }
+
+    public static int displayMaxArray(int[] array) {
+
+        int max = 0;
+
+        for(int i = 0; i < array.length; i++) {
+
+            if(max < array[i]) {
+                max = array[i];
+            }
+        }
+
+        return max;
+    }
+
+    public static boolean displayMinArray(int[] array) {
+
+        for(int i = 0; i < array.length; i++) {
+
+            if(array[i] < 10) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
 	// write your code here
 
@@ -15,17 +48,16 @@ public class Main {
         scores[5] = 86;
         scores[6] = 38;
 
+        System.out.println("max = " + displayMaxArray(scores));
 
-        for(int i = 0; i < scores.length; i++) {
-            System.out.println("score = " + scores[i]);
-        }
+        System.out.println("min = " + displayMinArray(scores));
 
-        int total = 0;
+        float total = 0;
 
         for(int i = 0; i < scores.length; i++) {
             total = total + scores[i];
         }
 
-        System.out.println("moyenne = " + total/7);
+        System.out.println("moyenne = " + total / scores.length);
     }
 }
