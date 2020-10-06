@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.company","c":"Main","l":"displayArray(int[])"},{"p":"com.company","c":"Main","l":"displayMaxArray(int[])"},{"p":"com.company","c":"Main","l":"displayMinArray(int[])"},{"p":"com.company","c":"Main","l":"Main()","u":"%3Cinit%3E()"},{"p":"com.company","c":"Main","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();

@@ -2,13 +2,22 @@ package com.company;
 
 public class Main {
 
-    static void displayArray(int[] array) {
+    /**
+     * Parcourir la totalité du tableau
+     * @param array - Tableau crée
+     */
+    public static void displayArray(int[] array) {
 
         for(int i = 0; i < array.length; i++) {
             System.out.println("score = " + array[i]);
         }
     }
 
+    /**
+     * Afficher la valeur maximum du tableau
+     * @param array - Tableau crée
+     * @return la valeur maximum du tableau
+     */
     public static int displayMaxArray(int[] array) {
 
         int max = 0;
@@ -23,6 +32,11 @@ public class Main {
         return max;
     }
 
+    /**
+     * Retourner vrai ou faux si le tableau contient une valeur inférieure à 10
+     * @param array
+     * @return true s'il existe une valeur inférieure à 10 et false si l'inverse
+     */
     public static boolean displayMinArray(int[] array) {
 
         for(int i = 0; i < array.length; i++) {
@@ -47,6 +61,8 @@ public class Main {
         scores[4] = 63;
         scores[5] = 86;
         scores[6] = 38;
+
+        displayArray(scores);
 
         System.out.println("max = " + displayMaxArray(scores));
 
